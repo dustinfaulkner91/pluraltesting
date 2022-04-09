@@ -4,8 +4,8 @@ metadata {
 }
 
 step "terraform-init" {
-  wkdir   = "monitoring/terraform"
-  target  = "monitoring/terraform"
+  wkdir   = "monitoring\terraform"
+  target  = "monitoring\terraform"
   command = "terraform"
   args    = ["init"]
   sha     = ""
@@ -13,8 +13,8 @@ step "terraform-init" {
 }
 
 step "terraform" {
-  wkdir   = "monitoring/terraform"
-  target  = "monitoring/terraform"
+  wkdir   = "monitoring\terraform"
+  target  = "monitoring\terraform"
   command = "plural"
 
   args = [
@@ -29,7 +29,7 @@ step "terraform" {
 
 step "kube-init" {
   wkdir   = "monitoring"
-  target  = "monitoring/.plural/NONCE"
+  target  = "monitoring\.plural\NONCE"
   command = "plural"
 
   args = [
@@ -43,8 +43,8 @@ step "kube-init" {
 }
 
 step "helm" {
-  wkdir   = "monitoring/helm"
-  target  = "monitoring/helm"
+  wkdir   = "monitoring\helm"
+  target  = "monitoring\helm"
   command = "plural"
 
   args = [

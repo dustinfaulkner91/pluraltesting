@@ -4,8 +4,8 @@ metadata {
 }
 
 step "terraform-init" {
-  wkdir   = "etcd/terraform"
-  target  = "etcd/terraform"
+  wkdir   = "etcd\terraform"
+  target  = "etcd\terraform"
   command = "terraform"
   args    = ["init"]
   sha     = ""
@@ -13,8 +13,8 @@ step "terraform-init" {
 }
 
 step "terraform" {
-  wkdir   = "etcd/terraform"
-  target  = "etcd/terraform"
+  wkdir   = "etcd\terraform"
+  target  = "etcd\terraform"
   command = "plural"
 
   args = [
@@ -29,7 +29,7 @@ step "terraform" {
 
 step "kube-init" {
   wkdir   = "etcd"
-  target  = "etcd/.plural/NONCE"
+  target  = "etcd\.plural\NONCE"
   command = "plural"
 
   args = [
@@ -43,8 +43,8 @@ step "kube-init" {
 }
 
 step "helm" {
-  wkdir   = "etcd/helm"
-  target  = "etcd/helm"
+  wkdir   = "etcd\helm"
+  target  = "etcd\helm"
   command = "plural"
 
   args = [

@@ -4,8 +4,8 @@ metadata {
 }
 
 step "terraform-init" {
-  wkdir   = "etcd/terraform"
-  target  = "etcd/terraform"
+  wkdir   = "etcd\terraform"
+  target  = "etcd\terraform"
   command = "terraform"
 
   args = [
@@ -18,8 +18,8 @@ step "terraform-init" {
 }
 
 step "terraform-apply" {
-  wkdir   = "etcd/terraform"
-  target  = "etcd/terraform"
+  wkdir   = "etcd\terraform"
+  target  = "etcd\terraform"
   command = "terraform"
 
   args = [
@@ -33,7 +33,7 @@ step "terraform-apply" {
 
 step "terraform-output" {
   wkdir   = "etcd"
-  target  = "etcd/terraform"
+  target  = "etcd\terraform"
   command = "plural"
 
   args = [
@@ -48,7 +48,7 @@ step "terraform-output" {
 
 step "kube-init" {
   wkdir   = "etcd"
-  target  = "etcd/.plural/NONCE"
+  target  = "etcd\.plural\NONCE"
   command = "plural"
 
   args = [
@@ -62,7 +62,7 @@ step "kube-init" {
 
 step "crds" {
   wkdir   = "etcd"
-  target  = "etcd/crds"
+  target  = "etcd\crds"
   command = "plural"
 
   args = [
@@ -77,7 +77,7 @@ step "crds" {
 
 step "bounce" {
   wkdir   = "etcd"
-  target  = "etcd/helm"
+  target  = "etcd\helm"
   command = "plural"
 
   args = [

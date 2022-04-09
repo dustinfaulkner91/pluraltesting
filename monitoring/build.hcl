@@ -13,7 +13,7 @@ scaffold "crds" {
 }
 
 scaffold "helm" {
-  path = "helm/monitoring"
+  path = "helm\monitoring"
   type = "helm"
 
   preflight "update-deps" {

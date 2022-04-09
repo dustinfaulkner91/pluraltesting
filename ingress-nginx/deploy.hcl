@@ -4,8 +4,8 @@ metadata {
 }
 
 step "terraform-init" {
-  wkdir   = "ingress-nginx/terraform"
-  target  = "ingress-nginx/terraform"
+  wkdir   = "ingress-nginx\terraform"
+  target  = "ingress-nginx\terraform"
   command = "terraform"
 
   args = [
@@ -18,8 +18,8 @@ step "terraform-init" {
 }
 
 step "terraform-apply" {
-  wkdir   = "ingress-nginx/terraform"
-  target  = "ingress-nginx/terraform"
+  wkdir   = "ingress-nginx\terraform"
+  target  = "ingress-nginx\terraform"
   command = "terraform"
 
   args = [
@@ -33,7 +33,7 @@ step "terraform-apply" {
 
 step "terraform-output" {
   wkdir   = "ingress-nginx"
-  target  = "ingress-nginx/terraform"
+  target  = "ingress-nginx\terraform"
   command = "plural"
 
   args = [
@@ -48,7 +48,7 @@ step "terraform-output" {
 
 step "kube-init" {
   wkdir   = "ingress-nginx"
-  target  = "ingress-nginx/.plural/NONCE"
+  target  = "ingress-nginx\.plural\NONCE"
   command = "plural"
 
   args = [
@@ -62,7 +62,7 @@ step "kube-init" {
 
 step "crds" {
   wkdir   = "ingress-nginx"
-  target  = "ingress-nginx/crds"
+  target  = "ingress-nginx\crds"
   command = "plural"
 
   args = [
@@ -77,7 +77,7 @@ step "crds" {
 
 step "bounce" {
   wkdir   = "ingress-nginx"
-  target  = "ingress-nginx/helm"
+  target  = "ingress-nginx\helm"
   command = "plural"
 
   args = [

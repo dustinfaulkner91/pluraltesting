@@ -4,8 +4,8 @@ metadata {
 }
 
 step "terraform-init" {
-  wkdir   = "minio/terraform"
-  target  = "minio/terraform"
+  wkdir   = "minio\terraform"
+  target  = "minio\terraform"
   command = "terraform"
   args    = ["init"]
   sha     = ""
@@ -13,8 +13,8 @@ step "terraform-init" {
 }
 
 step "terraform" {
-  wkdir   = "minio/terraform"
-  target  = "minio/terraform"
+  wkdir   = "minio\terraform"
+  target  = "minio\terraform"
   command = "plural"
 
   args = [
@@ -29,7 +29,7 @@ step "terraform" {
 
 step "kube-init" {
   wkdir   = "minio"
-  target  = "minio/.plural/NONCE"
+  target  = "minio\.plural\NONCE"
   command = "plural"
 
   args = [
@@ -43,8 +43,8 @@ step "kube-init" {
 }
 
 step "helm" {
-  wkdir   = "minio/helm"
-  target  = "minio/helm"
+  wkdir   = "minio\helm"
+  target  = "minio\helm"
   command = "plural"
 
   args = [

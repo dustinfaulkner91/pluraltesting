@@ -4,8 +4,8 @@ metadata {
 }
 
 step "terraform-init" {
-  wkdir   = "postgres/terraform"
-  target  = "postgres/terraform"
+  wkdir   = "postgres\terraform"
+  target  = "postgres\terraform"
   command = "terraform"
   args    = ["init"]
   sha     = ""
@@ -13,8 +13,8 @@ step "terraform-init" {
 }
 
 step "terraform" {
-  wkdir   = "postgres/terraform"
-  target  = "postgres/terraform"
+  wkdir   = "postgres\terraform"
+  target  = "postgres\terraform"
   command = "plural"
 
   args = [
@@ -29,7 +29,7 @@ step "terraform" {
 
 step "kube-init" {
   wkdir   = "postgres"
-  target  = "postgres/.plural/NONCE"
+  target  = "postgres\.plural\NONCE"
   command = "plural"
 
   args = [
@@ -43,8 +43,8 @@ step "kube-init" {
 }
 
 step "helm" {
-  wkdir   = "postgres/helm"
-  target  = "postgres/helm"
+  wkdir   = "postgres\helm"
+  target  = "postgres\helm"
   command = "plural"
 
   args = [

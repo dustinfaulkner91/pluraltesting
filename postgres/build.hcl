@@ -13,7 +13,7 @@ scaffold "crds" {
 }
 
 scaffold "helm" {
-  path = "helm/postgres"
+  path = "helm\postgres"
   type = "helm"
 
   preflight "update-deps" {
