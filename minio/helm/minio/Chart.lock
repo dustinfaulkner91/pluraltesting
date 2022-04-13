@@ -3,4 +3,4 @@ dependencies:
   repository: cm://app.plural.sh/cm/minio
   version: 0.1.51
 digest: sha256:c11a621b34475d9a74f623ae86071fa841ebc14f055ab8f56256b67aee849e54
-generated: "2022-04-09T18:54:14.7686692Z"
+generated: "2022-04-12T23:54:49.1695626-07:00"

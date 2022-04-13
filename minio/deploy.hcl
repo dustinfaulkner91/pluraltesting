@@ -4,8 +4,8 @@ metadata {
 }
 
 step "terraform-init" {
-  wkdir   = "minio\terraform"
-  target  = "minio\terraform"
+  wkdir   = "minio/terraform"
+  target  = "minio/terraform"
   command = "terraform"
 
   args = [
@@ -13,13 +13,13 @@ step "terraform-init" {
     "-upgrade",
   ]
 
-  sha     = ""
+  sha     = "h1:YJuVZmlEmXx92M/SmAGZSCLdo1M3aoSsaSsbyUs83bo="
   retries = 0
 }
 
 step "terraform-apply" {
-  wkdir   = "minio\terraform"
-  target  = "minio\terraform"
+  wkdir   = "minio/terraform"
+  target  = "minio/terraform"
   command = "terraform"
 
   args = [
@@ -27,13 +27,13 @@ step "terraform-apply" {
     "-auto-approve",
   ]
 
-  sha     = ""
+  sha     = "h1:YJuVZmlEmXx92M/SmAGZSCLdo1M3aoSsaSsbyUs83bo="
   retries = 1
 }
 
 step "terraform-output" {
   wkdir   = "minio"
-  target  = "minio\terraform"
+  target  = "minio/terraform"
   command = "plural"
 
   args = [
@@ -42,13 +42,13 @@ step "terraform-output" {
     "minio",
   ]
 
-  sha     = ""
+  sha     = "h1:YJuVZmlEmXx92M/SmAGZSCLdo1M3aoSsaSsbyUs83bo="
   retries = 0
 }
 
 step "kube-init" {
   wkdir   = "minio"
-  target  = "minio\.plural\NONCE"
+  target  = "minio/.plural/NONCE"
   command = "plural"
 
   args = [
@@ -56,13 +56,13 @@ step "kube-init" {
     "kube-init",
   ]
 
-  sha     = ""
+  sha     = "e1e9e8075576e06cb810cb58f16fae7c32cc5121c09ec117e5bba20d08193398"
   retries = 0
 }
 
 step "crds" {
   wkdir   = "minio"
-  target  = "minio\crds"
+  target  = "minio/crds"
   command = "plural"
 
   args = [
@@ -71,13 +71,13 @@ step "crds" {
     "minio",
   ]
 
-  sha     = ""
+  sha     = "h1:47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
   retries = 0
 }
 
 step "bounce" {
   wkdir   = "minio"
-  target  = "minio\helm"
+  target  = "minio/helm"
   command = "plural"
 
   args = [
@@ -86,6 +86,6 @@ step "bounce" {
     "minio",
   ]
 
-  sha     = ""
+  sha     = "h1:InL6qZ7Y4c9cSEG9UfRMAhrnSMdwUsmLTxxKTJHHYZs="
   retries = 1
 }

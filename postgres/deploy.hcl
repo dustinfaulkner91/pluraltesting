@@ -4,8 +4,8 @@ metadata {
 }
 
 step "terraform-init" {
-  wkdir   = "postgres\terraform"
-  target  = "postgres\terraform"
+  wkdir   = "postgres/terraform"
+  target  = "postgres/terraform"
   command = "terraform"
 
   args = [
@@ -13,13 +13,13 @@ step "terraform-init" {
     "-upgrade",
   ]
 
-  sha     = ""
+  sha     = "h1:ceb2o2kA4JQkdu1cL19TawKeUDUPnC5MtBb+VL/6XfQ="
   retries = 0
 }
 
 step "terraform-apply" {
-  wkdir   = "postgres\terraform"
-  target  = "postgres\terraform"
+  wkdir   = "postgres/terraform"
+  target  = "postgres/terraform"
   command = "terraform"
 
   args = [
@@ -27,13 +27,13 @@ step "terraform-apply" {
     "-auto-approve",
   ]
 
-  sha     = ""
+  sha     = "h1:ceb2o2kA4JQkdu1cL19TawKeUDUPnC5MtBb+VL/6XfQ="
   retries = 1
 }
 
 step "terraform-output" {
   wkdir   = "postgres"
-  target  = "postgres\terraform"
+  target  = "postgres/terraform"
   command = "plural"
 
   args = [
@@ -42,13 +42,13 @@ step "terraform-output" {
     "postgres",
   ]
 
-  sha     = ""
+  sha     = "h1:ceb2o2kA4JQkdu1cL19TawKeUDUPnC5MtBb+VL/6XfQ="
   retries = 0
 }
 
 step "kube-init" {
   wkdir   = "postgres"
-  target  = "postgres\.plural\NONCE"
+  target  = "postgres/.plural/NONCE"
   command = "plural"
 
   args = [
@@ -56,13 +56,13 @@ step "kube-init" {
     "kube-init",
   ]
 
-  sha     = ""
+  sha     = "5808d3fb0e2528a481dedc9095d5e7ee3d13a78be094dbe93312fe0561164dfe"
   retries = 0
 }
 
 step "crds" {
   wkdir   = "postgres"
-  target  = "postgres\crds"
+  target  = "postgres/crds"
   command = "plural"
 
   args = [
@@ -71,13 +71,13 @@ step "crds" {
     "postgres",
   ]
 
-  sha     = ""
+  sha     = "h1:+KtpiGhaAg9Db5EdGawKjfUTQqpyrQFC87h9Gj2L/zQ="
   retries = 0
 }
 
 step "bounce" {
   wkdir   = "postgres"
-  target  = "postgres\helm"
+  target  = "postgres/helm"
   command = "plural"
 
   args = [
@@ -86,6 +86,6 @@ step "bounce" {
     "postgres",
   ]
 
-  sha     = ""
+  sha     = "h1:pdiPbuSEHU0iy7HUwZae/xKSqAhCREiUAlqas/LBZuQ="
   retries = 1
 }
