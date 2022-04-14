@@ -13,7 +13,7 @@ scaffold "crds" {
 }
 
 scaffold "helm" {
-  path = "helm\minio"
+  path = "helm/minio"
   type = "helm"
 
   preflight "update-deps" {

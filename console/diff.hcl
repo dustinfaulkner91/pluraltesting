@@ -4,17 +4,17 @@ metadata {
 }
 
 step "terraform-init" {
-  wkdir   = "console\terraform"
-  target  = "console\terraform"
+  wkdir   = "console/terraform"
+  target  = "console/terraform"
   command = "terraform"
   args    = ["init"]
-  sha     = ""
+  sha     = "h1:s0pgReESgN8/IbS3K0NsKlo1y9EjdmonUDDmjVLLhmU="
   retries = 0
 }
 
 step "terraform" {
-  wkdir   = "console\terraform"
-  target  = "console\terraform"
+  wkdir   = "console/terraform"
+  target  = "console/terraform"
   command = "plural"
 
   args = [
@@ -23,13 +23,13 @@ step "terraform" {
     "console",
   ]
 
-  sha     = ""
+  sha     = "h1:s0pgReESgN8/IbS3K0NsKlo1y9EjdmonUDDmjVLLhmU="
   retries = 0
 }
 
 step "kube-init" {
   wkdir   = "console"
-  target  = "console\.plural\NONCE"
+  target  = "console/.plural/NONCE"
   command = "plural"
 
   args = [
@@ -38,13 +38,13 @@ step "kube-init" {
     "console",
   ]
 
-  sha     = ""
+  sha     = "bfc3241cbd087521a1c8d7d312b9fd9dcea9aeb4afab6898156e7f3abdfc5c0f"
   retries = 0
 }
 
 step "helm" {
-  wkdir   = "console\helm"
-  target  = "console\helm"
+  wkdir   = "console/helm"
+  target  = "console/helm"
   command = "plural"
 
   args = [
@@ -53,6 +53,6 @@ step "helm" {
     "console",
   ]
 
-  sha     = ""
+  sha     = "h1:bl0fTI/vEmpzpRbqUe5sHa5DW5pGKTf9x7kEUh8hk3w="
   retries = 0
 }

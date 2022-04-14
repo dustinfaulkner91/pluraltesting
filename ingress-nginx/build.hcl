@@ -13,7 +13,7 @@ scaffold "crds" {
 }
 
 scaffold "helm" {
-  path = "helm\ingress-nginx"
+  path = "helm/ingress-nginx"
   type = "helm"
 
   preflight "update-deps" {

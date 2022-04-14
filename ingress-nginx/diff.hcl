@@ -4,17 +4,17 @@ metadata {
 }
 
 step "terraform-init" {
-  wkdir   = "ingress-nginx\terraform"
-  target  = "ingress-nginx\terraform"
+  wkdir   = "ingress-nginx/terraform"
+  target  = "ingress-nginx/terraform"
   command = "terraform"
   args    = ["init"]
-  sha     = ""
+  sha     = "h1:k1nTcTPz3O33SnJR/hrsRR+JwJgQ/D2Qsb3BFrMJArQ="
   retries = 0
 }
 
 step "terraform" {
-  wkdir   = "ingress-nginx\terraform"
-  target  = "ingress-nginx\terraform"
+  wkdir   = "ingress-nginx/terraform"
+  target  = "ingress-nginx/terraform"
   command = "plural"
 
   args = [
@@ -23,13 +23,13 @@ step "terraform" {
     "ingress-nginx",
   ]
 
-  sha     = ""
+  sha     = "h1:k1nTcTPz3O33SnJR/hrsRR+JwJgQ/D2Qsb3BFrMJArQ="
   retries = 0
 }
 
 step "kube-init" {
   wkdir   = "ingress-nginx"
-  target  = "ingress-nginx\.plural\NONCE"
+  target  = "ingress-nginx/.plural/NONCE"
   command = "plural"
 
   args = [
@@ -38,13 +38,13 @@ step "kube-init" {
     "ingress-nginx",
   ]
 
-  sha     = ""
+  sha     = "5b527126172ec08d952bb2a59fac2282711dc97461f96efd13325280d7c52147"
   retries = 0
 }
 
 step "helm" {
-  wkdir   = "ingress-nginx\helm"
-  target  = "ingress-nginx\helm"
+  wkdir   = "ingress-nginx/helm"
+  target  = "ingress-nginx/helm"
   command = "plural"
 
   args = [
@@ -53,6 +53,6 @@ step "helm" {
     "ingress-nginx",
   ]
 
-  sha     = ""
+  sha     = "h1:z8vnEdqabQ2v71uH+msS9QiMzlKA8LTM3DQJWWa4aXc="
   retries = 0
 }

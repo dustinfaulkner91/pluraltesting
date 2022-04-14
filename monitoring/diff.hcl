@@ -4,17 +4,17 @@ metadata {
 }
 
 step "terraform-init" {
-  wkdir   = "monitoring\terraform"
-  target  = "monitoring\terraform"
+  wkdir   = "monitoring/terraform"
+  target  = "monitoring/terraform"
   command = "terraform"
   args    = ["init"]
-  sha     = ""
+  sha     = "h1:YMmUJxLmUQTlNC7qek1LZFo4K+hIroiITT+d18lsLLs="
   retries = 0
 }
 
 step "terraform" {
-  wkdir   = "monitoring\terraform"
-  target  = "monitoring\terraform"
+  wkdir   = "monitoring/terraform"
+  target  = "monitoring/terraform"
   command = "plural"
 
   args = [
@@ -23,13 +23,13 @@ step "terraform" {
     "monitoring",
   ]
 
-  sha     = ""
+  sha     = "h1:YMmUJxLmUQTlNC7qek1LZFo4K+hIroiITT+d18lsLLs="
   retries = 0
 }
 
 step "kube-init" {
   wkdir   = "monitoring"
-  target  = "monitoring\.plural\NONCE"
+  target  = "monitoring/.plural/NONCE"
   command = "plural"
 
   args = [
@@ -38,13 +38,13 @@ step "kube-init" {
     "monitoring",
   ]
 
-  sha     = ""
+  sha     = "433e9f7892bf6369ebb370b0cff668dc2bd578865f232420feb545dcac4319d1"
   retries = 0
 }
 
 step "helm" {
-  wkdir   = "monitoring\helm"
-  target  = "monitoring\helm"
+  wkdir   = "monitoring/helm"
+  target  = "monitoring/helm"
   command = "plural"
 
   args = [
@@ -53,6 +53,6 @@ step "helm" {
     "monitoring",
   ]
 
-  sha     = ""
+  sha     = "h1:qbLHiq1e9+ox4GCW0DCTRRLEMrINozJ20xF4C34bc8U="
   retries = 0
 }
