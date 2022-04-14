@@ -38,7 +38,7 @@ step "kube-init" {
     "etcd",
   ]
 
-  sha     = "3b525ea4efa64de866ba59fe53d9c89e32513731e5e4d1c84747769ee86e9556"
+  sha     = "45fecbcf7cdeaf83b8fdbf7b84523034180e8d8e5759c3124505d73d3d804e8a"
   retries = 0
 }
 

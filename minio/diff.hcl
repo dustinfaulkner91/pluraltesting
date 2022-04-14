@@ -38,7 +38,7 @@ step "kube-init" {
     "minio",
   ]
 
-  sha     = "d65e95e09b373e12ca989966fb1982e6e16afec1b497366a9775df563542956e"
+  sha     = "25b23ad16ea2255bdc0cd6cdfe735e7e4df476589a235865c7260879df854613"
   retries = 0
 }
 
